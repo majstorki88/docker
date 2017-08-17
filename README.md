@@ -45,3 +45,5 @@ $ sudo yum install docker-ce-<VERSION>
 $ sudo systemctl start docker
 9.	Verifikovati da je docker pravilno instaliran pokretanjem hello-world image-a.
 $ sudo docker run hello-world
+
+10. TACKA
