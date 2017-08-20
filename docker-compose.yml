@@ -3,7 +3,7 @@ portal:
   ports:
    - "8080:80"
   volumes:
-   - /home/docker/docker-cluster-master/cluster/default.conf:/etc/nginx/conf.d/default.conf
+   - /home/docker/projekat/cluster/default.conf:/etc/nginx/conf.d/default.conf
   links:
    - tomcat1:tomcat1
    - tomcat2:tomcat2
@@ -11,18 +11,25 @@ portal:
 tomcat1:
   image: tomcat
   volumes:
-   - /home/docker/docker-cluster-master/cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - /home/docker/docker-cluster-master/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - /home/docker/docker-cluster-master/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - /home/docker/projekat/cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - /home/docker/projekat/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - /home/docker/projekat/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
 tomcat2:
   image: tomcat
   volumes:
-   - /home/docker/docker-cluster-master/cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - /home/docker/docker-cluster-master/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - /home/docker/docker-cluster-master/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - /home/docker/projekat/cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - /home/docker/projekat/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - /home/docker/projekat/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
 tomcat3:
   image: tomcat
   volumes:
-   - /home/docker/docker-cluster-master/cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - /home/docker/docker-cluster-master/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - /home/docker/docker-cluster-master/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - /home/docker/projekat/cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - /home/docker/projekat/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - /home/docker/projekat/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+mysql:
+  image: mysql
+  environment:
+   - MYSQL_ROOT_PASSWORD=root
+   - MYSQL_DATABASE=bignibou
+  ports:
+    - "3306:3306"
