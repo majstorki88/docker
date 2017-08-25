@@ -108,8 +108,6 @@
       <!--For clustering, please take a look at documentation at:
           /docs/cluster-howto.html  (simple how to)
           /docs/config/cluster.html (reference documentation) -->
-
-
           <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"
                  channelSendOptions="8">
 
@@ -133,18 +131,15 @@
                 <Sender className="org.apache.catalina.tribes.transport.ReplicationTransmitter">
                   <Transport className="org.apache.catalina.tribes.transport.nio.PooledParallelSender"/>
                </Sender>
-              <Interceptor className="org.apache.catalina.tribes.group.interceptors.TcpFailureDetector"/>
-              <Interceptor className="org.apache.catalina.tribes.group.interceptors.MessageDispatch15Interceptor"/>
-          </Channel>
+               <Interceptor className="org.apache.catalina.tribes.group.interceptors.TcpFailureDetector"/>
+               <Interceptor className="org.apache.catalina.tribes.group.interceptors.MessageDispatchInterceptor"/>
+             </Channel>
 
-          <Valve className="org.apache.catalina.ha.tcp.ReplicationValve"
-                 filter=""/>
-          <Valve className="org.apache.catalina.ha.session.JvmRouteBinderValve"/>
-
-
-          <ClusterListener className="org.apache.catalina.ha.session.ClusterSessionListener"/>
-        </Cluster>
-
+             <Valve className="org.apache.catalina.ha.tcp.ReplicationValve"
+                    filter=""/>
+             <Valve className="org.apache.catalina.ha.session.JvmRouteBinderValve"/>
+             <ClusterListener className="org.apache.catalina.ha.session.ClusterSessionListener"/>
+          </Cluster>
       <!-- Use the LockOutRealm to prevent attempts to guess user passwords
            via a brute-force attack -->
       <Realm className="org.apache.catalina.realm.LockOutRealm">
