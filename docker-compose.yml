@@ -39,5 +39,7 @@ mysql:
   - MYSQL_DATABASE=nemanja
   - MYSQL_USER=hidmet
   - MYSQL_PASSWORD=hidmet
+  volumes:
+  - /home/docker/projekat/docker/cluster/data:/var/lib/mysql
   ports:
     - "3306:3306"

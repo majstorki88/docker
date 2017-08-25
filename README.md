@@ -62,9 +62,6 @@ $ git clone https://github.com/majstorki88/docker
 
 PODIZANJE OKRUZENJA
 
-1. U folderu /home/docker/projekat pokrenuti komandu docker-compose -f docker-compose.yml up
+1. U folderu /home/docker/projekat/docker pokrenuti komandu docker-compose -f docker-compose.yml up
 
 Nakon uspesnog izvrsenja dobijate 5 kontejnera - NGINX load balanser, 3 tomcate-a sa zahtevanom aplikacijom i MySQL bazom
-
-PAZNJA: Potrebno je u MySQLu kreirati bazu nemanja i user-a baznog hitmet/hidmet kojem je potrebno dodeliti prava create DB.
-Skrtipta kreira user-a i bazu
