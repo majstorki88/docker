@@ -60,10 +60,9 @@ $ sudo su
 $ cd /home/docker/projekat
 $ git clone https://github.com/majstorki88/docker
 
-4. kreirati folder data na lokaciji /home/docker/projekat/docker/cluster
+4. kreirati folder data na lokaciji /home/docker/projekat/docker/cluster za mysql bazu
 $ mkdir /home/docker/projekat/docker/cluster/data
 $ chmod 777 -R /home/docker/projekat/docker/cluster/data
-
 
 PODIZANJE OKRUZENJA
 
