@@ -14,24 +14,30 @@ tomcat1:
    - /home/docker/projekat/docker/cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - /home/docker/projekat/docker/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - /home/docker/projekat/docker/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+  links:
+   - mysql
 tomcat2:
   image: tomcat
   volumes:
    - /home/docker/projekat/docker/cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - /home/docker/projekat/docker/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - /home/docker/projekat/docker/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+  links:
+   - mysql
 tomcat3:
   image: tomcat
   volumes:
    - /home/docker/projekat/docker/cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - /home/docker/projekat/docker/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - /home/docker/projekat/docker/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+  links:
+   - mysql
 mysql:
   image: mysql
   environment:
   - MYSQL_ROOT_PASSWORD=root
   - MYSQL_DATABASE=nemanja
   - MYSQL_USER=hidmet
-  - MYSQL_PASSWORD=hidmet  
+  - MYSQL_PASSWORD=hidmet
   ports:
     - "3306:3306"
