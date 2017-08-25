@@ -60,8 +60,15 @@ $ sudo su
 $ cd /home/docker/projekat
 $ git clone https://github.com/majstorki88/docker
 
+4. kreirati folder data na lokaciji /home/docker/projekat/docker/cluster
+$ mkdir /home/docker/projekat/docker/cluster/data
+$ chmod 777 -R /home/docker/projekat/docker/cluster/data
+
+
 PODIZANJE OKRUZENJA
 
 1. U folderu /home/docker/projekat/docker pokrenuti komandu docker-compose -f docker-compose.yml up
+$ cd /home/docker/projekat/docker
+$ docker-compose -f docker-compose.yml up
 
 Nakon uspesnog izvrsenja dobijate 5 kontejnera - NGINX load balanser, 3 tomcate-a sa zahtevanom aplikacijom i MySQL bazom
