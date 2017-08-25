@@ -29,7 +29,10 @@ tomcat3:
 mysql:
   image: mysql
   environment:
-   - MYSQL_ROOT_PASSWORD=root
-   - MYSQL_DATABASE=nemanja
+   MYSQL_ROOT_PASSWORD=root
+   MYSQL_DATABASE=nemanja
+   MYSQL_USER: "hidmet"
+   MYSQL_PASSWORD: "hidmet"
+   MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
   ports:
     - "3306:3306"
