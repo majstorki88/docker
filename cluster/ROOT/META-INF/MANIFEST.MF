@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Implementation-Title: Spring Boot Web Secure Sample
 Implementation-Version: 0.0.1-SNAPSHOT
 Archiver-Version: Plexus Archiver
-Built-By: ivanri
+Built-By: nemanja
 Implementation-Vendor-Id: com.telekomsrbija.nemanja
 Spring-Boot-Version: 1.5.2.RELEASE
 Implementation-Vendor: Pivotal Software, Inc.
@@ -14,4 +14,3 @@ Created-By: Apache Maven 3.3.9
 Build-Jdk: 1.8.0_141
 Implementation-URL: http://projects.spring.io/spring-boot/LoadBalancer
  /
-
