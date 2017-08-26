@@ -6,11 +6,17 @@
 	href="../../css/bootstrap.min.css" />
 </head>
 <body>
+	<p>Hostname noda je:</p>
 	<div class="container">
-
-		<h1 th:text="${server}">Title</h1>
+		<div th:text="${server}">Fake content</div>
+  </div>
+	<p>Broj pristupa ovom nodu:</p>
+	<div class="container">
 		<div th:text="${url}">Fake content</div>
-		
+  </div>
+	<p>Broj pristupa sajtu:</p>
+	<div class="container">
+		<div th:text="${total}">Fake content</div>
 	</div>
 </body>
 </html>

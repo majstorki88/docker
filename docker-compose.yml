@@ -3,7 +3,7 @@ portal:
   ports:
    - "8080:80"
   volumes:
-   - /home/docker/projekat/docker/cluster/default.conf:/etc/nginx/conf.d/default.conf
+   - ./cluster/default.conf:/etc/nginx/conf.d/default.conf
   links:
    - tomcat1:tomcat1
    - tomcat2:tomcat2
@@ -11,25 +11,25 @@ portal:
 tomcat1:
   image: tomcat
   volumes:
-   - /home/docker/projekat/docker/cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - /home/docker/projekat/docker/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - /home/docker/projekat/docker/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
   links:
    - mysql
 tomcat2:
   image: tomcat
   volumes:
-   - /home/docker/projekat/docker/cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - /home/docker/projekat/docker/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - /home/docker/projekat/docker/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
   links:
    - mysql
 tomcat3:
   image: tomcat
   volumes:
-   - /home/docker/projekat/docker/cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - /home/docker/projekat/docker/cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - /home/docker/projekat/docker/cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
   links:
    - mysql
 mysql:
@@ -40,6 +40,6 @@ mysql:
   - MYSQL_USER=hidmet
   - MYSQL_PASSWORD=hidmet
   volumes:
-  - /home/docker/projekat/docker/cluster/data:/var/lib/mysql
+  - ./cluster/data:/var/lib/mysql
   ports:
     - "3306:3306"

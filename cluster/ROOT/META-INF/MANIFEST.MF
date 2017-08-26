@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Implementation-Title: Spring Boot Web Secure Sample
 Implementation-Version: 0.0.1-SNAPSHOT
 Archiver-Version: Plexus Archiver
-Built-By: nemanja
+Built-By: nemanjama
 Implementation-Vendor-Id: com.telekomsrbija.nemanja
 Spring-Boot-Version: 1.5.2.RELEASE
 Implementation-Vendor: Pivotal Software, Inc.
