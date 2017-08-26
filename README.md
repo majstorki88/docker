@@ -43,31 +43,14 @@ DOCKER COMPOSE
 
 sudo yum install docker-compose
 
-SETOVANJE ENVIRONMENTA
+2. na bilo kojoj lokaciji klonirati git repozitorijum
 
-1. kreirati home direktorijum docker-a
-
-$ sudo mkdir /home/docker/projekat
-
-2. setobati permisije i vlasnika da bude ROOT ili user koji run-uje docker engine proces
-
-$ sudo chmod +x -R /home/docker/projekat
-$ sudo chown root:root /home/docker/projekat
-
-3. U home direktorijumu docker-a klonirati git repozitorijum
-
-$ sudo su
-$ cd /home/docker/projekat
 $ git clone https://github.com/majstorki88/docker
-
-4. kreirati folder data na lokaciji /home/docker/projekat/docker/cluster za mysql bazu
-$ mkdir /home/docker/projekat/docker/cluster/data
-$ chmod 777 -R /home/docker/projekat/docker/cluster/data
 
 PODIZANJE OKRUZENJA
 
-1. U folderu /home/docker/projekat/docker pokrenuti komandu docker-compose -f docker-compose.yml up
-$ cd /home/docker/projekat/docker
+1. U folderu ./docker pokrenuti komandu docker-compose -f docker-compose.yml up
+$ cd docker
 $ docker-compose -f docker-compose.yml up
 
 Nakon uspesnog izvrsenja dobijate 5 kontejnera - NGINX load balanser, 3 tomcate-a sa zahtevanom aplikacijom i MySQL bazom
